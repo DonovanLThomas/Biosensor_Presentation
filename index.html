@@ -44,7 +44,7 @@
 
   <main id="main">
     <section class="slide hero-slide reveal" id="title" aria-labelledby="title-heading">
-      <div class="slide-inner hero-grid">
+      <div class="slide-inner hero-center">
         <div class="hero-copy">
           <p class="eyebrow">Symposium Research Presentation</p>
           <h1 id="title-heading">Remote Signals, Living Data: Heart &amp; Brain from Anywhere</h1>
@@ -54,37 +54,6 @@
             <strong>Asia Anderson</strong>
           </div>
         </div>
-
-        <figure class="hero-visual" aria-label="Signal, organoid, wireless, and circuit visual motif">
-          <svg viewBox="0 0 520 430" role="img" aria-labelledby="hero-visual-title">
-            <title id="hero-visual-title">Signal wave moving from an organoid through circuit traces to wireless arcs</title>
-            <defs>
-              <linearGradient id="signalGradient" x1="0%" x2="100%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#7aa89f"></stop>
-                <stop offset="55%" stop-color="#6f9fbe"></stop>
-                <stop offset="100%" stop-color="#e88aa8"></stop>
-              </linearGradient>
-            </defs>
-            <rect x="58" y="72" width="404" height="286" rx="24" fill="#ffffff" opacity="0.7"></rect>
-            <path class="circuit-line" d="M96 270 H164 Q184 270 184 250 V208 Q184 188 204 188 H270"></path>
-            <path class="circuit-line" d="M250 188 H316 Q336 188 336 208 V260 Q336 280 356 280 H420"></path>
-            <path class="circuit-line pink" d="M136 322 H224 Q244 322 244 302 V266"></path>
-            <circle cx="178" cy="188" r="70" fill="#dbece8" stroke="#7aa89f" stroke-width="4"></circle>
-            <circle cx="160" cy="180" r="15" fill="#ffffff"></circle>
-            <circle cx="198" cy="206" r="11" fill="#ffffff"></circle>
-            <circle cx="184" cy="154" r="9" fill="#ffffff"></circle>
-            <path class="signal-wave" d="M96 188 C118 152 140 224 162 188 S206 152 228 188 272 224 294 188 338 152 360 188 404 224 426 188"></path>
-            <rect x="286" y="236" width="100" height="74" rx="12" fill="#244247"></rect>
-            <rect x="310" y="254" width="52" height="22" rx="4" fill="#f7f6f1"></rect>
-            <circle cx="308" cy="292" r="5" fill="#e88aa8"></circle>
-            <circle cx="328" cy="292" r="5" fill="#7aa89f"></circle>
-            <circle cx="348" cy="292" r="5" fill="#6f9fbe"></circle>
-            <path class="wireless-arc" d="M384 136 Q426 166 384 196"></path>
-            <path class="wireless-arc small" d="M408 108 Q476 166 408 224"></path>
-            <circle cx="92" cy="270" r="8" fill="#e88aa8"></circle>
-            <circle cx="420" cy="280" r="8" fill="#6f9fbe"></circle>
-          </svg>
-        </figure>
       </div>
     </section>
 
@@ -165,43 +134,105 @@
           <p class="status-pill">Current stage: prototype foundation</p>
         </div>
 
-        <div class="architecture-wrap" role="img" aria-label="System architecture from organoid and biosensor to anisotropic conductive tape, ESP32 electronics, wireless communication, and laptop dashboard">
-          <svg class="architecture-svg" viewBox="0 0 1180 430" aria-hidden="true">
-            <defs>
-              <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-                <path d="M2,2 L10,6 L2,10 Z" fill="#244247"></path>
-              </marker>
-              <linearGradient id="archGradient" x1="0%" x2="100%">
-                <stop offset="0%" stop-color="#7aa89f"></stop>
-                <stop offset="65%" stop-color="#6f9fbe"></stop>
-                <stop offset="100%" stop-color="#e88aa8"></stop>
-              </linearGradient>
-            </defs>
-            <path class="arch-flow" d="M218 215 H366"></path>
-            <path class="arch-flow" d="M504 215 H652"></path>
-            <path class="arch-flow" d="M790 215 H938"></path>
-            <path class="return-flow" d="M958 300 C760 388 438 388 240 300"></path>
-          </svg>
+        <div class="signal-loop" role="img" aria-label="Seven step planned signal loop: ESP32 pulse output, contact interface, biosensor and organoid, return signal, ESP32 readback, wireless transmission, and laptop dashboard">
+          <article class="loop-card">
+            <span class="step-badge">1</span>
+            <h3>ESP32 pulse output</h3>
+            <div class="mini-visual chip-visual" aria-hidden="true">
+              <span>ESP32</span>
+            </div>
+            <svg class="pulse-strip" viewBox="0 0 120 30" aria-hidden="true">
+              <path d="M2 24 H18 V8 H34 V24 H50 V8 H66 V24 H82 V8 H98 V24 H118" />
+            </svg>
+            <p>Generates a test electrical pulse.</p>
+          </article>
 
-          <article class="arch-node organoid-node">
-            <span class="node-icon organoid-icon"></span>
-            <h3>Organoid + biosensor</h3>
-            <p>The biological environment is expected to alter the signal in future testing.</p>
-          </article>
-          <article class="arch-node tape-node">
-            <span class="node-icon tape-icon"></span>
+          <article class="loop-card">
+            <span class="step-badge">2</span>
             <h3>Contact interface</h3>
-            <p>Anisotropic conductive tape is a future path for connecting the biosensor into the circuit.</p>
+            <div class="mini-visual tape-stack" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p>Anisotropic conductive tape links electronics to the biosensor.</p>
           </article>
-          <article class="arch-node esp-node">
-            <span class="node-icon chip-icon"></span>
-            <h3>ESP32 electronics</h3>
-            <p>Prototype code can send a pulse and read a return signal.</p>
+
+          <article class="loop-card">
+            <span class="step-badge">3</span>
+            <h3>Biosensor + organoid</h3>
+            <div class="mini-visual dish-visual" aria-hidden="true">
+              <span class="organoid-cluster"></span>
+            </div>
+            <p>Signal passes through the organoid environment.</p>
           </article>
-          <article class="arch-node laptop-node">
-            <span class="node-icon laptop-icon"></span>
-            <h3>BLE or Wi-Fi dashboard</h3>
-            <p>Wireless data collection can move measurements toward a laptop or device display.</p>
+
+          <article class="loop-card return-card">
+            <span class="step-badge">4</span>
+            <h3>Return signal</h3>
+            <svg class="wave-visual" viewBox="0 0 150 72" aria-hidden="true">
+              <path d="M4 36 C15 36 15 18 26 18 S37 56 48 56 59 18 70 18 81 56 92 56 103 18 114 18 125 36 146 36" />
+              <path class="back-arrow" d="M132 62 H28" />
+            </svg>
+            <p>Electrical response is altered and measured.</p>
+          </article>
+
+          <article class="loop-card">
+            <span class="step-badge">5</span>
+            <h3>ESP32 readback</h3>
+            <svg class="tiny-wave" viewBox="0 0 120 34" aria-hidden="true">
+              <path d="M4 18 C17 18 17 5 30 5 S43 31 56 31 69 5 82 5 95 18 116 18" />
+            </svg>
+            <div class="mini-visual chip-visual" aria-hidden="true">
+              <span>ESP32</span>
+            </div>
+            <p>Records the returned signal.</p>
+          </article>
+
+          <article class="loop-card wireless-card">
+            <span class="step-badge">6</span>
+            <h3>Wireless transmission</h3>
+            <div class="wireless-choice" aria-hidden="true">
+              <span>BLE</span>
+              <small>or</small>
+              <span>Wi-Fi</span>
+            </div>
+            <p>Sends data wirelessly.</p>
+          </article>
+
+          <article class="loop-card">
+            <span class="step-badge">7</span>
+            <h3>Laptop dashboard</h3>
+            <div class="mini-visual laptop-visual" aria-hidden="true">
+              <svg viewBox="0 0 150 92">
+                <rect x="20" y="8" width="110" height="66" rx="6"></rect>
+                <path d="M6 82 H144"></path>
+                <path d="M34 46 C43 46 43 28 52 28 S61 64 70 64 79 34 88 34 97 56 106 56 115 42 124 42"></path>
+              </svg>
+            </div>
+            <p>Visualize and analyze data.</p>
+          </article>
+
+          <div class="loop-arrow loop-arrow-1" aria-hidden="true"></div>
+          <div class="loop-arrow loop-arrow-2" aria-hidden="true"></div>
+          <div class="loop-arrow loop-arrow-3" aria-hidden="true"></div>
+          <div class="loop-arrow loop-arrow-4" aria-hidden="true"></div>
+          <div class="loop-arrow loop-arrow-5" aria-hidden="true"></div>
+          <div class="loop-arrow loop-arrow-6" aria-hidden="true"></div>
+        </div>
+
+        <div class="loop-return" aria-hidden="true">
+          <span>Signal loop</span>
+        </div>
+
+        <div class="loop-status-grid">
+          <article class="loop-status current">
+            <span class="status-icon flask-icon" aria-hidden="true"></span>
+            <p><strong>Current stage:</strong> design + prototyping.</p>
+          </article>
+          <article class="loop-status future">
+            <span class="status-icon target-icon" aria-hidden="true"></span>
+            <p><strong>Future step:</strong> validate how organoid activity changes the returned signal.</p>
           </article>
         </div>
 
